@@ -109,7 +109,7 @@ export class ProductData extends Component {
             (e)=>e.currency.label === this.props.currencyState
           ).amount}</p>:""}
         </PriceText>
-          {product.isStock ?<Button onClick={()=>{handleAddToCart()}}>ADD TO CART</Button>:
+          {product.inStock ?<Button onClick={()=>{handleAddToCart()}}>ADD TO CART</Button>:
           <Button onClick={()=>{handleAddToCart()}} disabled>Not In Stock</Button>}
         
 
