@@ -110,7 +110,7 @@ export class ProductData extends Component {
           ).amount}</p>:""}
         </PriceText>
           {product.inStock ?<Button onClick={()=>{handleAddToCart()}}>ADD TO CART</Button>:
-          <Button onClick={()=>{handleAddToCart()}} disabled>Not In Stock</Button>}
+          <Button onClick={()=>{handleAddToCart()}} disabled>NOT IN STOCK</Button>}
         
 
         {product.description ? <ProductDescription>
