@@ -18,7 +18,7 @@ export const RadioButton = styled.div`
   position: relative;
   width: ${props =>props.size==="sm" ? "25px":"50px"};
   height: ${props =>props.size==="sm" ? "20px":"30px"};
-  border: 2px solid;
+  border: 2.5px solid;
   margin-right:${props =>props.size==="sm" ? "4px":"12px"};
   display: flex;
   justify-content: center;
