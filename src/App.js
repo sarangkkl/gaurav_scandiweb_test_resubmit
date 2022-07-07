@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getProducts,getCategories } from './utls/MakeQuery';
+import { getCategories } from './utls/MakeQuery';
 import { setCategories } from './store/reducers/productReducer';
 import { connect } from 'react-redux';
 import { Navbar } from './Components';
