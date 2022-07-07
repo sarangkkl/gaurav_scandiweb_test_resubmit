@@ -13,6 +13,8 @@ export class CartPageCard extends Component {
       <>
       <Card>
         <ProdData item={item} uniqueKey={uniqueKey}/>
+
+        {/* The actions buttons lie inside the CartImageCrousal Component */}
         <CartImageCrousal item={item} uniqueKey={uniqueKey}/>
       </Card>
       </>

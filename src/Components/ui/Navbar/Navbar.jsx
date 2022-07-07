@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { NavLink } from 'react-router-dom';
-import { NavbarWrapper,NavItemContainer,NavbarItem,CartCount } from './NavbarStyle';
+import { NavbarWrapper,NavItemContainer,NavbarItem } from './NavbarStyle';
 import {CurrencyDropdown,OverlayCart} from '../../';
-import { toggleCurrency,changeCurrencystate } from '../../../store/reducers/currencyReducers';
+import { toggleCurrency } from '../../../store/reducers/currencyReducers';
 
 
 
 export class Navbar extends Component {
-
+  
   constructor() {
     super();
     this.state = {
@@ -20,11 +20,6 @@ export class Navbar extends Component {
   componentDidMount(){
     this.props.toggleCurrency("USD+$");
   }
-
-  
-  
-
-  
   render() {
 
     
@@ -32,7 +27,7 @@ export class Navbar extends Component {
     return (
       <NavbarWrapper>
         <NavItemContainer>
-            {this.props.product && this.props.product.map((item,index)=>(
+            {this.props.category && this.props.category.map((item,index)=>(
                 <NavbarItem key={index}>
                     <NavLink to={`/${item.name}`} className={({ isActive }) => isActive? "active": ''}>{item.name[0].toUpperCase()+item.name.substring(1)}</NavLink>
                 </NavbarItem>
@@ -58,11 +53,10 @@ export class Navbar extends Component {
 
 const mapStateToProps = (state) => {
     return {
-      product: state.product.category,
+      category: state.product.category,
       currencyState:state.currency.currencyState,
-      currencyActive:state.currency.currencyActive,
       currencySymbol:state.currency.currencySymbol,
       cart:state.cart.cart.cartItems,
     };
   };
-export default connect(mapStateToProps, {toggleCurrency,changeCurrencystate})(Navbar);
+export default connect(mapStateToProps, {toggleCurrency})(Navbar);

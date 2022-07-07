@@ -2,7 +2,7 @@ import styled, { keyframes } from "styled-components";
 
 const forwardAnimatin = keyframes`
   0%{
-    transform:translateX(20%);
+    transform:translateX(10%);
   }100%{
     transform:translateX(0); 
   }
@@ -41,12 +41,12 @@ export const ActionButtonDiv = styled.div`
 
 export const ProductImage = styled.div`
   width: 200px;
-  height: 200px;
+  height: 288px;
 `;
 export const CustomImage = styled.img`
   animation: ${(props) => (props.back ? backwardAnimatin : forwardAnimatin)} 1s
     ease-in-out;
-  max-height: 95%;
+  width: 100%;
 `;
 
 export const CrousalButtons = styled.div`

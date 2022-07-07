@@ -139,3 +139,18 @@ export const getProductByCategories = async(category)=>{
   }})
   return data;
 }
+
+
+export const getCategories = async()=>{
+
+  const data = await client.query({
+    query:gql`
+    query Query {
+      categories {
+        name
+      }
+    }
+    `,
+  })
+  return data;
+}

@@ -27,7 +27,7 @@ export class ProductCard extends Component {
         <ProductCardContainer>
           {inStock ? <Link to={`/${id}`}><img src={gallery[0]} alt="" /></Link>:
           <DisableContainer ><Link to={`/${id}`}><img src={gallery[0]} alt="" /></Link>
-            <h4>OUT OF STOCK</h4>
+            <Link to={`/${id}`}><h4 >OUT OF STOCK</h4></Link>
           </DisableContainer>}
         </ProductCardContainer>
         <ProductCardContainer>
@@ -54,7 +54,7 @@ const  mapStateToProps = (state) =>{
   return {
       currencyState:state.currency.currencyState,
       currencySymbol:state.currency.currencySymbol,
-      cart:state.cart.cart.cartItems
+      
   }
 }
 

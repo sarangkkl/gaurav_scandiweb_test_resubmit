@@ -3,6 +3,8 @@ import { RadioButton } from '../../basicui/basicui'
 export class Radiobtn extends Component {
   render() {
     const {label,name,handleVary,isDisabled,isChecked,size} = this.props;
+
+    // Here the radio button getting render by condition isDisable is Check and also the size
     return (
         <div>
             {isDisabled ?<RadioButton size={size}>

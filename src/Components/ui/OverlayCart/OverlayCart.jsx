@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { OverlayCartContainer,OverlayCartHeader,TotalContainer,
-  ActionSection,ViewBagButton,CheckoutButton,CartCount,NavbarItem } from './OverlayCartStyle';
+  ActionSection,ViewBagButton,CheckoutButton,CartCount,NavbarItem,OverlayContainerWrapper } from './OverlayCartStyle';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { OverlayCartbody } from '../../';
@@ -71,7 +71,7 @@ export class OverlayCart extends Component {
       <NavbarItem ref={this.state.ref}>
         <img src="/assets/images/empty.png" alt="cart" onClick={()=>{this.handleCartActive()}}/>
                   {getTotalItem() ===0 ? "": <CartCount><span>{getTotalItem()}</span></CartCount>}
-                  {this.state.isCartActive && <OverlayCartContainer >
+                  {this.state.isCartActive && <OverlayContainerWrapper> <OverlayCartContainer >
         <OverlayCartHeader>
                 My Bag,   <span>{getTotalItem()} items</span>
         </OverlayCartHeader>
@@ -85,7 +85,7 @@ export class OverlayCart extends Component {
               <CheckoutButton>CHECKOUT</CheckoutButton>
             </ActionSection>
 
-        </OverlayCartContainer> }
+        </OverlayCartContainer></OverlayContainerWrapper> }
       
 
       

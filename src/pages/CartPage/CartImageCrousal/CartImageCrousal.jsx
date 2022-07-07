@@ -85,12 +85,13 @@ export class CartImageCrousal extends Component {
               <CustomImageComponent src={gallery[this.state.index__count]} key={this.state.index__count} item={gallery}/>}
               
 
+            
+            </ProductImage>
               {/* REnder button only if image more than one */}
             {item.product.gallery.length > 1 && <CrousalButtons>
               <button onClick={() => toggleImg("DEC")}>˂</button>
               <button onClick={() => toggleImg("INC")}>˃</button>
             </CrousalButtons>} 
-            </ProductImage>
         </div>
       </ActionContainer>
     )

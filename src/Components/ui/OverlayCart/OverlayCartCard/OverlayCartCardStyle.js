@@ -64,6 +64,8 @@ export const CartHeaderWrapper = styled.div`
 
 export const AttributeCard = styled.div`
   & h6{
+    fon-weight: 600;
+    font-size: 14px;
     margin:5px 0px;
   }
 `;

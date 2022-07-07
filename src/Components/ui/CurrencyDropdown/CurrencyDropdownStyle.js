@@ -5,7 +5,7 @@ export const SelectWrapper = styled.div`
   width:120px;
   position: relative;
   margin-top: 5px;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   right: 8%;
   z-index: 10;
 `

@@ -17,9 +17,9 @@ export class ProdData extends Component {
           <p>
             {this.props.currencySymbol}
             {this.props.currencyState &&
-              product.prices.find(
+              (product.prices.find(
                 (e) => e.currency.label === this.props.currencyState
-              ).amount
+              ).amount).toFixed(2)
             }
           </p>
           {/* 😶 Attribute render section start here */}

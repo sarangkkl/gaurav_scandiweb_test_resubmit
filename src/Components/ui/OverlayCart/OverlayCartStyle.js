@@ -1,14 +1,21 @@
 import styled from "styled-components";
 import { colors } from "../../../styles/theme";
 
+export const OverlayContainerWrapper = styled.div`
+  position: absolute;
+  width: 1px;
+
+`;
+
+
 export const OverlayCartContainer = styled.div`
   width: 345px;
-  position: absolute;
+  position: relative;
   z-index: 100;
-  border: 1px solid #e6e6e6;
-  right: 25px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  right: 330px;
   background-color: rgb(255, 255, 255);
-  padding: 5px 10px;
+  
   border-radius: 10px;
   max-height: 80vh;
   overflow-y: scroll;
