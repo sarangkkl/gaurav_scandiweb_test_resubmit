@@ -13,7 +13,6 @@ export class App extends Component {
     
     getCategories().then(data =>{
       this.props.setCategories(data.data.categories)
-      console.log(data.data.categories)
     })
   }
   render() {
