@@ -34,8 +34,8 @@ export const RadioButton = styled.div`
   }
   & input[type="radio"] + label {
     position: absolute;
-    width: 108%;
-    height: 108%;
+    width: 114%;
+    height: 114%;
     top: -1px;
     left: -1px;
     display: flex;

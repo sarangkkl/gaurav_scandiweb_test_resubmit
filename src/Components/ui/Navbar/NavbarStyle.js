@@ -19,10 +19,7 @@ export const NavbarItem = styled.div`
     color: ${colors.blackColor};
   }
 
-  img {
-    width: 24px;
-    cursor: pointer;
-  }
+  
 `;
 
 export const NavbarSelect = styled.select`

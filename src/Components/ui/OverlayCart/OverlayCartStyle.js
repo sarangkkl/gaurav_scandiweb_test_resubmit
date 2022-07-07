@@ -7,13 +7,18 @@ export const OverlayContainerWrapper = styled.div`
 
 `;
 
+export const NavbarItemIcon = styled.img`
+  width: 24px;
+  cursor: pointer;
+`;
+
 
 export const OverlayCartContainer = styled.div`
   width: 345px;
   position: relative;
   z-index: 100;
   box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-  right: 330px;
+  right: 300px;
   background-color: rgb(255, 255, 255);
   
   border-radius: 10px;
@@ -24,6 +29,7 @@ export const OverlayCartContainer = styled.div`
 export const OverlayCartHeader = styled.p`
   font-size: 20px;
   font-weight: 600;
+  padding: 10px 20px 0px 20px;
 
   span {
     font-size: 18px;
@@ -54,6 +60,7 @@ export const TotalContainer = styled.div`
 `;
 
 export const ActionSection = styled.div`
+  margin: 10px 5px;
   display: flex;
   justify-content: space-between;
 `;
@@ -107,8 +114,5 @@ export const NavbarItem = styled.div`
     color: ${colors.blackColor};
   }
 
-  img {
-    width: 24px;
-    cursor: pointer;
-  }
+  
 `;
