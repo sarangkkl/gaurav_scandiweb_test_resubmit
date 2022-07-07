@@ -17,7 +17,7 @@ export const PageTitle = styled.h1`
 export const RadioButton = styled.div`
   position: relative;
   width: ${props =>props.size==="sm" ? "25px":"50px"};
-  height: ${props =>props.size==="sm" ? "20px":"30px"};
+  height: ${props =>props.size==="sm" ? "20px":"40px"};
   border: 2.5px solid;
   margin-right:${props =>props.size==="sm" ? "4px":"12px"};
   display: flex;
@@ -34,10 +34,10 @@ export const RadioButton = styled.div`
   }
   & input[type="radio"] + label {
     position: absolute;
-    width: 101%;
-    height: 101%;
-    top: 0;
-    left: 0;
+    width: 108%;
+    height: 108%;
+    top: -1px;
+    left: -1px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,7 +62,7 @@ export const Button = styled.button`
 
 export const InputWrapper = styled.div`
   width: 114px;
-  height: 35px;
+  height: 45px;
   padding-left: 10px;
   cursor: pointer;
   display: flex;

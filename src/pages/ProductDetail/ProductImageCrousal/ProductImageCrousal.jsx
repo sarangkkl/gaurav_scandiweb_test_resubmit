@@ -3,8 +3,8 @@ import { ProductImageWrapper,ProductImage,ProductImageContainer,ProductMainImage
 
 export class ProductImageCrousal extends Component {
     render() {
-    const { images } = this.props;
-
+    const { images,inStock } = this.props;
+    // console.log(this.props)
     // Function that is handling the change of the image
     const handleImageChange = (value) => {
         var x = document.getElementById("main__img");
@@ -23,10 +23,15 @@ export class ProductImageCrousal extends Component {
                     </ProductImage>
                 ))}
             </ProductImageWrapper>
-            <ProductMainImage>
+            {inStock ? <ProductMainImage>
                 {images ? <img src={images[0]} alt="" id='main__img'/> : null}
-                {/* <img src={images[0]} alt=""/> */}
-            </ProductMainImage>
+                
+            </ProductMainImage>:
+            <ProductMainImage outOfStock>
+            {images ? <img src={images[0]} alt="" id='main__img'/> : null}
+            <h1>OUT OF STOCK</h1>
+        </ProductMainImage>}
+            
 
         </ProductImageContainer>
     )

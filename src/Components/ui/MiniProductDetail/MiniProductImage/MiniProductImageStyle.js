@@ -2,13 +2,11 @@ import styled from "styled-components";
 
 export const MiniProductImageContainer = styled.div`
   display: flex;
-  flex: 0.4;
-  justify-content: space-between;
 `;
 export const MainProductImg = styled.div`
   width: 100%;
   img {
-    width: 90%;
+    width: 100%;
     max-height: 450px;
   }
 `;

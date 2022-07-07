@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colors } from "../../../styles/theme";
 
 export const OverlayCartContainer = styled.div`
   width: 345px;
@@ -70,4 +71,37 @@ export const CheckoutButton = styled.button`
   color: #ffffff;
   cursor: pointer;
   background: #5ece7b;
+`;
+
+export const CartCount = styled.div`
+  position: relative;
+  top: -36px;
+  right: -11px;
+  background-color: black;
+  color: white;
+  border-radius: 100%;
+  width: 17px;
+  height: 17px;
+
+  & span{
+    font-size: 12px;
+    display: flex;
+    margin-left: -1px;
+    justify-content: center;
+    cursor: pointer;
+  }
+`;
+
+export const NavbarItem = styled.div`
+  margin-right: 32px;
+  font-weight: 600;
+  font-size: 16px;
+  a {
+    color: ${colors.blackColor};
+  }
+
+  img {
+    width: 24px;
+    cursor: pointer;
+  }
 `;

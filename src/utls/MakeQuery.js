@@ -96,3 +96,46 @@ export const getCurrency = async()=>{
   })
   return data;
 }
+
+export const getProductByCategories = async(category)=>{
+  const data = await client.query({
+    query:gql`
+    query Category($input: CategoryInput) {
+      category(input: $input) {
+        name
+        products {
+          name
+          id
+          inStock
+          gallery
+          description
+          category
+          attributes {
+            id
+            name
+            type
+            items {
+              displayValue
+              value
+              id
+            }
+          }
+          prices {
+            currency {
+              label
+              symbol
+            }
+            amount
+          }
+          brand
+        }
+      }
+    }
+    `
+  ,variables:{
+    "input": {
+      "title": `${category}`,
+    }
+  }})
+  return data;
+}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { MiniProductDetailContainer,CloseButton } from './MiniProductStyle';
+import { MiniProductDetailContainer } from './MiniProductStyle';
 import MiniProductData from './MiniProductData/MiniProductData';
 import MiniProductImage from './MiniProductImage/MiniProductImage';
 
@@ -40,8 +40,8 @@ export class MiniProductDetail extends Component {
         {this.state.isComponentVisible && <MiniProductDetailContainer ref={this.state.ref}>
 
           <MiniProductImage product={this.props.product}/>
-          <MiniProductData product={this.props.product}/>
-          <CloseButton onClick={()=>{hide()}}>X</CloseButton>
+          <MiniProductData product={this.props.product} hide={hide}/>
+          
       </MiniProductDetailContainer>}
       </>
     )

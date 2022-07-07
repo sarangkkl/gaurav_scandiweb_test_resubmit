@@ -3,13 +3,25 @@ import { colors } from "../../../styles/theme";
 
 export const Card = styled.div`
     display: flex;
-    border-top: 1px solid #E5E5E5;
+    border-top: 2px solid #E5E5E5;
     border-bottom: 1px solid #E5E5E5;
+    padding: 10px 0px;
     justify-content: space-between;
 `;
 
 export const Productdata = styled.div`
   margin:20px 0px;
+
+  & h3{
+    font-size: 22px;
+  }
+  & h4{
+    font-size: 20px;
+  }
+  & p{
+    margin:10px 0px;
+    font-size: 20px;
+  }
 `;
 
 export const ProductAttributeDiv = styled.div`

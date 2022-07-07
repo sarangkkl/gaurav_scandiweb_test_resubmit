@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { PageTitle } from '../../Components/basicui/basicui';
-import { ProductCard } from '../../Components';
+import { ProductCard,Loader } from '../../Components';
 import { connect } from 'react-redux';
 import { ProductListingContainer } from './ProductListingStyle';
+import { getProductByCategories } from '../../utls/MakeQuery'
 
 export class ProductListing extends Component {
 
@@ -20,22 +21,23 @@ export class ProductListing extends Component {
     const currentUrl = window.location.pathname;
     const id = currentUrl.replace("/", "");
     this.setState({categoryId:id})
+    
+    getProductByCategories(id).then(res=>{
+      this.setState({products:res.data.category.products,loading:false})
+      
+    })
   }
   render() {
     return (
       <>
         {this.state.categoryId ? <PageTitle>{this.state.categoryId[0].toUpperCase()+this.state.categoryId.substring(1)}</PageTitle>:""}
-        
+        {this.state.loading ? <Loader/> : 
         <ProductListingContainer>
-          {this.props.product ? this.props.product.map((item,index)=>(
-            <ProductListingContainer key={index}>
-              {item.name === this.state.categoryId ? item.products.map((item,index)=>(
-                
-                <ProductCard key={index} product={item} />
-              )):""}
-            </ProductListingContainer>
-          )):""}
-        </ProductListingContainer>
+          {this.state.products && this.state.products.map((item,index)=>(
+            <ProductCard key={index} product={item}/>
+          ))}
+        </ProductListingContainer>}
+        
           
       </>
     )

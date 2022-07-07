@@ -22,17 +22,17 @@ export const RadioColorBtnWrapper= styled.div`
   }
   & input[type="radio"] + label {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+    width: 101%;
+    height: 101%;
+    top: -1px;
+    left: -1px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   
   & input[type="radio"]:checked + label {
-    border:2px solid ${colors.primary}
+    border:3px solid ${colors.primary}
   }
 `;
 

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { MiniProductDataWrapper,ProductBrand,ProductName,AttributeContainer,AttributeTitle,
-  AttributeDiv,AttributeInnerDiv,PriceText,PriceTextContainer,ButtonWrapper } from './MiniProductDataStyle';
+  AttributeDiv,AttributeInnerDiv,PriceText,PriceTextContainer,ButtonWrapper,CloseButton,
+VisitProduct } from './MiniProductDataStyle';
 import { Radiobtn,RadioColorBtn,Button } from '../../../';
 import { connect } from "react-redux";
-import { addToCart } from '../../../../store/reducers/cartReducer'
+import { addToCart } from '../../../../store/reducers/cartReducer';
+import { Link } from 'react-router-dom'
 
 export class MiniProductData extends Component {
 
@@ -17,7 +19,7 @@ export class MiniProductData extends Component {
 
   render() {
     
-    const {product} = this.props;
+    const {product,hide} = this.props;
     // Function that is handling the add to cart functionality
     const handleAddToCart = () => {
 
@@ -106,10 +108,15 @@ export class MiniProductData extends Component {
             <PriceText>
               {product.prices ? <p>{this.props.currencySymbol} {product.prices.find((e)=>e.currency.label === this.props.currencyState).amount}</p>:""}
             </PriceText>
+            <VisitProduct>
+                <Link to={`/${product.id}`}>VISIT PRODUCT</Link>
+                
+            </VisitProduct>
             <ButtonWrapper>
+              
               <Button onClick={()=>{handleAddToCart()}}>ADD TO CART</Button>
             </ButtonWrapper>
-        
+            <CloseButton onClick={()=>{hide()}}><img src='/assets/images/close.svg' alt='close'/></CloseButton>
       </MiniProductDataWrapper>
     )
   }

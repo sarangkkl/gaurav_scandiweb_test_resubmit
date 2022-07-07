@@ -26,10 +26,12 @@ export const ActionButtonDiv = styled.div`
 
   & button {
     width: 25px;
+    cursor: pointer;
     height: 25px;
     margin: 10px 20px;
     background-color: #fff;
-    border: 1px solid #000;
+    border: 2px solid #000;
+    font-size: 20px;
   }
 
   & p {

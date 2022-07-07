@@ -24,21 +24,10 @@ export class Navbar extends Component {
   
   
 
-  // Function that will show the cart
-  handleCartActive(){
-    this.setState({
-      isCartActive:!this.state.isCartActive
-    })
-  }
+  
   render() {
 
-    const getTotalItem = () =>{
-      let totalItem = 0;
-      this.props.cart.forEach(item => {
-        totalItem += item.quantity;
-      });
-      return totalItem;
-    }
+    
 
     return (
       <NavbarWrapper>
@@ -59,10 +48,8 @@ export class Navbar extends Component {
                 <CurrencyDropdown/>
               </NavbarItem>
               <NavbarItem >
-                  <img src="/assets/images/empty.png" alt="cart" onClick={()=>{this.handleCartActive()}}/>
-                  {getTotalItem() ===0 ? "": <CartCount><span>{getTotalItem()}</span></CartCount>}
+                <OverlayCart/> 
               </NavbarItem>
-                  {this.state.isCartActive && <OverlayCart/> }
         </NavItemContainer>
       </NavbarWrapper>
     )

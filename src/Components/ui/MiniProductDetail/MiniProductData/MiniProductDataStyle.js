@@ -1,13 +1,36 @@
 import styled from "styled-components";
 import { colors } from "../../../../styles/theme";
 export const MiniProductDataWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex: 0.4;
-  border: 1px solid ${colors.blackColor};
+ 
+  
+  
 `;
 
 
+export const VisitProduct = styled.div`
+  margin: 10px 10px;  
+
+  & a{
+    color: #1DA1F2;
+  }
+
+
+`;
+
+export const CloseButton = styled.button`
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    font-weight: bold;
+    z-index: 100;
+    font-size: 40px;
+    color:red;
+    background-color: transparent;
+`
 
 export const ProductBrand = styled.div`
   display: flex;
@@ -15,6 +38,7 @@ export const ProductBrand = styled.div`
     font-weight: 600;
     font-size: 30px;
     margin: 5px 10px;
+    font-family: "Roboto", sans-serif;
 
     color: ${colors.blackColor};
   }
@@ -87,3 +111,5 @@ export const PriceTextContainer = styled.div`
   display: flex;
   margin:5px 10px; 
   `;
+
+  

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { OverlayCartContainer,OverlayCartHeader,TotalContainer,
-  ActionSection,ViewBagButton,CheckoutButton } from './OverlayCartStyle';
+  ActionSection,ViewBagButton,CheckoutButton,CartCount,NavbarItem } from './OverlayCartStyle';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
-import { OverlayCartbody } from '../../'
+import { OverlayCartbody } from '../../';
 
 
 export class OverlayCart extends Component {
@@ -11,21 +11,21 @@ export class OverlayCart extends Component {
   constructor(){
     super();
     this.state={
-      isComponentVisible: true,
+      isCartActive:false,
       ref: React.createRef(null),
     }
   }
 
   handleHideDropdown = (event) => {
     if (event.key === 'Escape') {
-      this.setState({ isComponentVisible: false });
+      this.setState({ isCartActive: false });
     }
   }
 
   handleClickOutside = (event) => {
     if (this.state.ref.current && !this.state.ref.current.contains(event.target)) {
       
-      this.setState({ isComponentVisible: false });
+      this.setState({ isCartActive: false });
     }
   }
 
@@ -37,6 +37,13 @@ export class OverlayCart extends Component {
   componentWillUnmount(){
     document.removeEventListener('keydown', this.handleHideDropdown, true);
     document.removeEventListener('click', this.handleClickOutside, true);
+  }
+
+  // Function that will show the cart
+  handleCartActive(){
+    this.setState({
+      isCartActive:!this.state.isCartActive
+    })
   }
 
   render() {
@@ -61,11 +68,10 @@ export class OverlayCart extends Component {
       return parseFloat(totalPrice).toFixed(2);
     }
     return (
-
-      <>
-      
-
-      {this.state.isComponentVisible && <OverlayCartContainer ref={this.state.ref}>
+      <NavbarItem ref={this.state.ref}>
+        <img src="/assets/images/empty.png" alt="cart" onClick={()=>{this.handleCartActive()}}/>
+                  {getTotalItem() ===0 ? "": <CartCount><span>{getTotalItem()}</span></CartCount>}
+                  {this.state.isCartActive && <OverlayCartContainer >
         <OverlayCartHeader>
                 My Bag,   <span>{getTotalItem()} items</span>
         </OverlayCartHeader>
@@ -79,8 +85,11 @@ export class OverlayCart extends Component {
               <CheckoutButton>CHECKOUT</CheckoutButton>
             </ActionSection>
 
-        </OverlayCartContainer>}
-      </>
+        </OverlayCartContainer> }
+      
+
+      
+      </NavbarItem>
 
     )
   }

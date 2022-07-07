@@ -43,21 +43,3 @@ export const CurrencyBtn = styled.button`
   cursor: pointer;
 `;
 
-export const CartCount = styled.div`
-  position: relative;
-  top: -36px;
-  right: -11px;
-  background-color: black;
-  color: white;
-  border-radius: 100%;
-  width: 17px;
-  height: 17px;
-
-  & span{
-    font-size: 12px;
-    display: flex;
-    margin-left: -1px;
-    justify-content: center;
-    cursor: pointer;
-  }
-`;

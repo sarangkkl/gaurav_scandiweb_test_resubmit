@@ -31,7 +31,7 @@ export class ProductDetail extends Component {
     return (
       <>
         {this.state.product ? <ProductDetailContainer>
-              {this.state.product ? <ProductImageCrousal images={this.state.product.gallery} /> : null}
+              {this.state.product ? <ProductImageCrousal images={this.state.product.gallery} inStock={this.state.product.inStock}/> : null}
               {this.state.product ? <ProductData product={this.state.product} /> : null}
         </ProductDetailContainer>:""}
 

@@ -42,8 +42,8 @@ export class ProductCard extends Component {
         <ProductBuyLogo >
           {inStock ? <ProductBuyImage src="/assets/images/cart.png" alt="" onClick={()=>{handleShowProductDetail()}}/>:
           <ProductBuyImage src="/assets/images/cart.png" alt=""/>}
-          {this.state.showMiniProductDetail && <MiniProductDetail product={this.props.product} hide={handleShowProductDetail}/>}
         </ProductBuyLogo>
+          {this.state.showMiniProductDetail && <MiniProductDetail product={this.props.product} hide={handleShowProductDetail}/>}
       </ProductCardBody>
     )
   }

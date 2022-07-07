@@ -21,10 +21,10 @@ export const RadioButton = styled.div`
   }
   & input[type="radio"] + label {
     position: absolute;
-    width: 101%;
-    height: 101%;
-    top: 0;
-    left: 0;
+    width: 105%;
+    height: 105%;
+    top: -1px;
+    left: -1px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -43,7 +43,7 @@ export const RadioColorBtnWrapper= styled.div`
   width: 25px;
   height: 25px;
   margin-right: 4px;
-  border: 1px solid;
+  border: 2px solid;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,14 +61,14 @@ export const RadioColorBtnWrapper= styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
+    top: -1px;
+    left: -1px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   
   & input[type="radio"]:checked + label {
-    border:2px solid ${colors.primary}
+    border:3px solid ${colors.primary}
   }
 `;

@@ -50,7 +50,7 @@ export class OverlayCartCard extends Component {
                             <Attributediv>
                               {attr.items.map((attrItem,ind)=>(
                                 <div key={ind}>
-                                  {item.variation[index].value===attrItem.value ? <Radiobtn label={attrItem.value} name={`${attr.name}${index}`} isChecked={true} size="sm" isDisabled={true}/>
+                                  {item.variation[index].value===attrItem.value ? <Radiobtn label={attrItem.value} name={`${attr.name}${uniqueKey}`} isChecked={true} size="sm" isDisabled={true}/>
                                   :<Radiobtn label={attrItem.value} name={`${attr.name}${uniqueKey}`} isCheck={false} size="sm" isDisabled={true}/>}
                                 </div>
                               ))}

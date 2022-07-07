@@ -2,10 +2,11 @@ import { colors } from '../../../styles/theme'
 import styled from 'styled-components';
 
 export const SelectWrapper = styled.div`
-  width:114px;
+  width:150px;
   position: absolute;
   margin-top: 5px;
   right: 63px;
+  z-index: 1;
 `
 
 export const NavbarItem = styled.div`

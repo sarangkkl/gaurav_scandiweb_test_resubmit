@@ -16,7 +16,7 @@ export class ProdData extends Component {
           <h4>{product.brand}</h4>
           <p>
             {this.props.currencySymbol}
-            {" "}{this.props.currencyState &&
+            {this.props.currencyState &&
               product.prices.find(
                 (e) => e.currency.label === this.props.currencyState
               ).amount

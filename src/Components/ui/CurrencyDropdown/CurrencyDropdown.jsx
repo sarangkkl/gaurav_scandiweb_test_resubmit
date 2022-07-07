@@ -10,7 +10,6 @@ export class CurrencyDropdown extends Component {
     super();
     this.state = {
       currency: [],
-      isComponentVisible: true,
       isActiveCurrency:false,
       ref: React.createRef(null),
     };
@@ -18,14 +17,15 @@ export class CurrencyDropdown extends Component {
 
   handleHideDropdown = (event) => {
     if (event.key === 'Escape') {
-      this.setState({ isComponentVisible: false });
+      this.setState({ isActiveCurrency: false });
     }
   }
 
   handleClickOutside = (event) => {
     if (this.state.ref.current && !this.state.ref.current.contains(event.target)) {
+      
       this.setState({
-        isActiveCurrency:!this.state.isActiveCurrency
+        isActiveCurrency:false
       })
       
     }
@@ -50,8 +50,6 @@ export class CurrencyDropdown extends Component {
     document.removeEventListener('keydown', this.handleHideDropdown, true);
     document.removeEventListener('click', this.handleClickOutside, true);
   }
-  // Function That will handle the change of the currency in the state(●'◡'●)
-  // Function that will show the currency selector
   
   
   render() {
@@ -62,12 +60,12 @@ export class CurrencyDropdown extends Component {
     }
     
     return <>
-          <NavbarItem>
+          <NavbarItem ref={this.state.ref}>
               <CurrencyBtn onClick={()=>{handleCurrencyActive()}}>
-                 {this.props.currencySymbol}    {this.state.isActiveCurrency ? "⮝":"⮟"}
+                 <p>{this.props.currencySymbol}    {this.state.isActiveCurrency ? "⮝":"⮟"}</p> 
               </CurrencyBtn>
-                  {this.state.isActiveCurrency && <SelectWrapper ref={this.state.ref}>
-                {this.state.currency ? this.state.currency.map((item,index)=>(
+                  {this.state.isActiveCurrency && <SelectWrapper >
+                  {this.state.currency ? this.state.currency.map((item,index)=>(
                         <SelectInput key={index} value={`${item.label}+${item.symbol}`} label={`${item.symbol} ${item.label}`}/>
                     )):""}
               </SelectWrapper> }
@@ -78,9 +76,8 @@ export class CurrencyDropdown extends Component {
 }
 const  mapStateToProps = (state) =>{
   return {
-      currencyState:state.currency.currencyState,
       currencySymbol:state.currency.currencySymbol,
-      cart:state.cart.cart.cartItems
+      
   }
 }
 export default connect(mapStateToProps,{toggleCurrency}) (CurrencyDropdown);

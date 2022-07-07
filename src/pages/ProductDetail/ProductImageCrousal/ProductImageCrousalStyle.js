@@ -26,5 +26,12 @@ export const ProductMainImage = styled.div`
     img{
         max-width:100%;
         height:511px;
+        opacity:${props => props.outOfStock ? 0.6 : 1};
+    }
+    & h1{
+        position:absolute;
+        top: 63%;
+        right: 55%;
+        color:#8D8F9A;
     }
 `

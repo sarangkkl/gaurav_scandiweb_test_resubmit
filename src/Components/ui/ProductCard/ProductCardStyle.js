@@ -2,17 +2,20 @@ import styled from "styled-components";
 import { colors } from "../../../styles/theme";
 export const ProductCardBody = styled.div`
   width: 370px;
-  margin: 10px auto;
+  margin: 10px auto 10px 0px;
   :hover {
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-      rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    box-shadow: 0px 4px 35px 0px rgba(168, 172, 176, 0.19);
   }
 `;
 export const ProductCardContainer = styled.div`
   width: 354px;
   margin: 0 auto;
   img {
-    height: 330px;
+    width: 100%;
+    align-self: center;
+    object-fit: contain;
+    
+    max-height: 354px;
   }
 `;
 
@@ -42,8 +45,8 @@ export const ProductBuyLogo = styled.button`
   height: 40px;
   background-color: ${colors.primary};
   position: relative;
-  top: -170px;
-  left: 325px;
+  top: -90px;
+  left: 286px;
   border: none;
   outline: none;
   border-radius: 100%;

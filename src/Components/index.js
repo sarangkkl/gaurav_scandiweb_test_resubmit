@@ -8,7 +8,8 @@ import SelectInput from "./ui/SelectInput/SelectInput";
 import CurrencyDropdown from './ui/CurrencyDropdown/CurrencyDropdown';
 import OverlayCart from "./ui/OverlayCart/OverlayCart";
 import OverlayCartbody from "./ui/OverlayCart/OverlayCartbody/OverlayCartbody";
+import Loader from "./ui/Loader/Loader";
 export {
     Navbar,ProductCard,ProductImageCrousal,Radiobtn,RadioColorBtn,Button,SelectInput,CurrencyDropdown,OverlayCart,
-    OverlayCartbody
+    OverlayCartbody,Loader
 }
