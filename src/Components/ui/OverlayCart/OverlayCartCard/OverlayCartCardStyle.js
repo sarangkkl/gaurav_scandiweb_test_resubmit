@@ -5,7 +5,7 @@ export const CartCardWrapper = styled.div`
   margin: 20px auto;
   display: flex;
   padding: 10px 0px;
-  border-top: 1px solid #e6e6e6;
+  
 
   
 `;
@@ -53,6 +53,8 @@ export const CartCardAction = styled.div`
 `;
 
 export const CartCardImg = styled.div`
+  padding: 0px 10px;
+  width: 121px;
   & img{
     width:100%;
   }
