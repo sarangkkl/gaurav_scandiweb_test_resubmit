@@ -34,8 +34,8 @@ export class ProductCard extends Component {
           
             
             <ProductCardTitle><Link to={`/${id}`}>{brand} {name}</Link></ProductCardTitle>
-            <ProductCardPrice><Link to={`/${id}`}>{prices.find(
-            (e)=>e.currency.label === this.props.currencyState).amount} {this.props.currencySymbol}</Link></ProductCardPrice>
+            <ProductCardPrice><Link to={`/${id}`}>{this.props.currencySymbol} {(prices.find(
+            (e)=>e.currency.label === this.props.currencyState).amount).toFixed(2)}</Link></ProductCardPrice>
           
           
         </ProductCardContainer>

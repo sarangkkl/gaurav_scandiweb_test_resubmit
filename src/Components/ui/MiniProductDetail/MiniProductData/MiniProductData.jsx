@@ -106,7 +106,8 @@ export class MiniProductData extends Component {
                 <h4>PRICE:</h4>
             </PriceTextContainer>
             <PriceText>
-              {product.prices ? <p>{this.props.currencySymbol} {product.prices.find((e)=>e.currency.label === this.props.currencyState).amount}</p>:""}
+              {product.prices ? <p>{this.props.currencySymbol} {(product.prices.find((e)=>
+              e.currency.label === this.props.currencyState).amount).toFixed(2)}</p>:""}
             </PriceText>
             <VisitProduct>
                 <Link to={`/${product.id}`}>VISIT PRODUCT</Link>

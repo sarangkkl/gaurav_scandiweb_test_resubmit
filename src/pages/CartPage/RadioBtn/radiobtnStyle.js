@@ -6,6 +6,7 @@ export const RadioButton = styled.div`
   width: 35px;
   height: 30px;
   border: 2px solid;
+  margin:0px 10px 0px 0px;
   
   display: flex;
   justify-content: center;

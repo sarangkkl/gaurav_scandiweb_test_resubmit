@@ -4,6 +4,8 @@ export const CartCardWrapper = styled.div`
   width: 95%;
   margin: 20px auto;
   display: flex;
+  padding: 10px 0px;
+  border-top: 1px solid #e6e6e6;
 
   
 `;
@@ -73,5 +75,4 @@ export const AttributeColor = styled.div`
 export const Attributediv  = styled.div`
   margin-top: 10px;
   display: flex;
-  justify-content: space-between;
 `;

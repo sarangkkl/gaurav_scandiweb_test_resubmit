@@ -18,7 +18,7 @@ export const RadioButton = styled.div`
   position: relative;
   width: ${props =>props.size==="sm" ? "25px":"50px"};
   height: ${props =>props.size==="sm" ? "20px":"40px"};
-  border: 2.5px solid;
+  border: 2.2px solid;
   margin-right:${props =>props.size==="sm" ? "4px":"12px"};
   display: flex;
   justify-content: center;
@@ -69,7 +69,6 @@ export const InputWrapper = styled.div`
   z-index: 100;
   align-items: center;
   background: #fff;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
   font-family: "Raleway";
   font-style: normal;

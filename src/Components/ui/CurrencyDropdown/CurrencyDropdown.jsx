@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { SelectWrapper,NavbarItem,CurrencyBtn } from "./CurrencyDropdownStyle";
+import { SelectWrapper,NavbarItem,CurrencyBtn,SelectWrapperContainer } from "./CurrencyDropdownStyle";
 import { getCurrency } from "../../../utls/MakeQuery";
 import { connect } from 'react-redux'
 import { SelectInput } from '../../';
@@ -64,11 +64,11 @@ export class CurrencyDropdown extends Component {
               <CurrencyBtn onClick={()=>{handleCurrencyActive()}}>
                  <p>{this.props.currencySymbol}    {this.state.isActiveCurrency ? "⮝":"⮟"}</p> 
               </CurrencyBtn>
-                  {this.state.isActiveCurrency && <SelectWrapper >
+                  {this.state.isActiveCurrency && <SelectWrapperContainer> <SelectWrapper >
                   {this.state.currency ? this.state.currency.map((item,index)=>(
                         <SelectInput key={index} value={`${item.label}+${item.symbol}`} label={`${item.symbol} ${item.label}`}/>
                     )):""}
-              </SelectWrapper> }
+              </SelectWrapper> </SelectWrapperContainer>}
           </NavbarItem>
 
     </>;

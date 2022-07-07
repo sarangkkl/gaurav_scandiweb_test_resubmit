@@ -2,12 +2,17 @@ import { colors } from '../../../styles/theme'
 import styled from 'styled-components';
 
 export const SelectWrapper = styled.div`
-  width:150px;
-  position: absolute;
+  width:120px;
+  position: relative;
   margin-top: 5px;
-  right: 63px;
-  z-index: 1;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  right: 8%;
+  z-index: 10;
 `
+
+export const SelectWrapperContainer = styled.div`
+  position: absolute;
+`;
 
 export const NavbarItem = styled.div`
   margin-right: 32px;
@@ -29,3 +34,4 @@ export const CurrencyBtn = styled.button`
   outline: none;
   cursor: pointer;
 `;
+

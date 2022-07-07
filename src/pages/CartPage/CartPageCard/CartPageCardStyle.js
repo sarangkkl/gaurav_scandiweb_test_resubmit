@@ -47,7 +47,6 @@ export const Attributediv = styled.div`
   margin-top: 10px;
   width: 180px;
   display: flex;
-  justify-content: space-between;
 `;
 
 export const AttributeInnerDiv = styled.div`

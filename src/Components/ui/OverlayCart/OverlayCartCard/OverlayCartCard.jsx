@@ -23,11 +23,9 @@ export class OverlayCartCard extends Component {
           <CartCardHeader>
               <h6>{item.product.brand}</h6>
               <p>{item.product.name}</p>
-              <h5>{this.props.currencySymbol} {item.product.prices.find(
+              <h5>{this.props.currencySymbol} {(item.product.prices.find(
                 (e)=>e.currency.label === this.props.currencyState
-              ).amount
-              
-              }</h5>
+              ).amount).toFixed(2)}</h5>
           </CartCardHeader>
 
                 {item.product.attributes.map((attr,index)=>(
