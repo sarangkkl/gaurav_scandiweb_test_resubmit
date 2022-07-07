@@ -45,8 +45,8 @@ export const ProductBuyLogo = styled.button`
   height: 40px;
   background-color: ${colors.primary};
   position: relative;
-  top: -90px;
-  left: 286px;
+  top: -60px;
+  left: 320px;
   border: none;
   outline: none;
   border-radius: 100%;
