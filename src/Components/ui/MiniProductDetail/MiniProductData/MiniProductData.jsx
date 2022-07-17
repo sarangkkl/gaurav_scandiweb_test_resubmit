@@ -46,7 +46,7 @@ export class MiniProductData extends Component {
           id:`${product.id}+${order.map((item) => `${item.type}=${item.value}`).join("+")}`
         };
         this.props.addToCart(data);
-        
+        hide();// this function by propdrilling is actually handleShowProductDetail function from Productcard component
       } else {
         alert("Please Select all the variations or The selected variation is already exist in the cart");
       }

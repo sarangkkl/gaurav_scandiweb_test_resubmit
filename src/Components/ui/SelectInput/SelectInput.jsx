@@ -6,15 +6,17 @@ import { toggleCurrency } from '../../../store/reducers/currencyReducers'
 export class SelectInput extends Component {
 
 
-  //  Function That will change the currency state globally
-  handleToggleCurrency(value){
+  
+  render() {
+      const { label,value,hide } = this.props;
+      //  Function That will change the currency state globally
+  const handleToggleCurrency =(value)=>{
     this.props.toggleCurrency(value)
+    hide()
   }
-    render() {
-      const { label,value } = this.props;
     return (
       <InputWrapper>
-            <input type="radio" value={value} id={label} name='cate' onChange={(e)=>{this.handleToggleCurrency(e.target.value)}}/>
+            <input type="radio" value={value} id={label} name='cate' onChange={(e)=>{handleToggleCurrency(e.target.value)}}/>
             <label htmlFor={label}>{label}</label>
       </InputWrapper>
     )

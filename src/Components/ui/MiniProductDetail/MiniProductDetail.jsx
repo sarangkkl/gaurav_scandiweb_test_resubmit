@@ -26,7 +26,7 @@ export class MiniProductDetail extends Component {
     
       componentDidMount() {
         document.addEventListener('keydown', this.handleHideDropdown, true);
-      document.addEventListener('click', this.handleClickOutside, true);
+        document.addEventListener('click', this.handleClickOutside, true);
       }
     
       componentWillUnmount(){

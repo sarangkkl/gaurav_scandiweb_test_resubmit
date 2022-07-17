@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import { OverlayCartContainer,OverlayCartHeader,TotalContainer,
-  ActionSection,ViewBagButton,CheckoutButton,CartCount,NavbarItem,OverlayContainerWrapper,
-  NavbarItemIcon } from './OverlayCartStyle';
-import { Link } from 'react-router-dom'
+import { CartCount,NavbarItem,NavbarItemIcon,DisableNavbarItemIcon } from './OverlayCartStyle';
 import { connect } from 'react-redux';
-import { OverlayCartbody } from '../../';
-
+import { Navigate } from 'react-router-dom'
+import OverlayCartWrapperContainer from './OverlayCartWrapperContainer';
 
 export class OverlayCart extends Component {
 
@@ -13,41 +10,19 @@ export class OverlayCart extends Component {
     super();
     this.state={
       isCartActive:false,
-      ref: React.createRef(null),
     }
   }
+  
 
-  handleHideDropdown = (event) => {
-    if (event.key === 'Escape') {
-      this.setState({ isCartActive: false });
-    }
-  }
-
-  handleClickOutside = (event) => {
-    if (this.state.ref.current && !this.state.ref.current.contains(event.target)) {
-      
-      this.setState({ isCartActive: false });
-    }
-  }
-
-  componentDidMount() {
-    document.addEventListener('keydown', this.handleHideDropdown, true);
-    document.addEventListener('click', this.handleClickOutside, true);
-  }
-
-  componentWillUnmount(){
-    document.removeEventListener('keydown', this.handleHideDropdown, true);
-    document.removeEventListener('click', this.handleClickOutside, true);
-  }
-
-  // Function that will show the cart
-  handleCartActive(){
+  render() {
+    // Function that will show the cart
+  const handleCartActive = (e)=>{
+    e.preventDefault();
+    console.log("cart active");
     this.setState({
       isCartActive:!this.state.isCartActive
     })
   }
-
-  render() {
     // Function whose purpose of life to get the totalitems in the cart
     const getTotalItem = () =>{
       let totalItem = 0;
@@ -57,39 +32,17 @@ export class OverlayCart extends Component {
       return totalItem;
     }
 
-    const getTotalPrice = (curren)  =>{
-      let totalPrice = 0;
-      this.props.cart.forEach(item => {
-        let price =item.product.prices.find(
-                  (e) => e.currency.label === curren
-                ).amount
-        totalPrice = totalPrice + item.quantity*price
-        // totalPrice += item.price;
-      });
-      return parseFloat(totalPrice).toFixed(2);
-    }
+    
+
+    
     return (
-      <NavbarItem ref={this.state.ref}>
-        <NavbarItemIcon src="/assets/images/empty.png" alt="cart" onClick={()=>{this.handleCartActive()}}/>
+      <NavbarItem >
+        {/* here on base of isCartActive i am rendering DisableNavbarItemIcon to avoid multiple triggering of 
+        handleCartActive function */}
+        {this.state.isCartActive ? <DisableNavbarItemIcon src="/assets/images/empty.png" alt="InactiveIcons"/>:
+        <NavbarItemIcon src="/assets/images/empty.png" alt="cart" onClick={(e)=>{handleCartActive(e)}}/>}
                   {getTotalItem() ===0 ? "": <CartCount><span>{getTotalItem()}</span></CartCount>}
-                  {this.state.isCartActive && <OverlayContainerWrapper> <OverlayCartContainer >
-        <OverlayCartHeader>
-                My Bag,   <span>{getTotalItem()} items</span>
-        </OverlayCartHeader>
-              <OverlayCartbody cartItem ={this.props.cart}/>
-            <TotalContainer>
-              <p>Total</p>
-              <h6>{this.props.currencySymbol} {getTotalPrice(this.props.currencyState)}</h6>
-            </TotalContainer>
-            <ActionSection>
-              <Link to={"/cart"}><ViewBagButton>VIEW BAG</ViewBagButton></Link>
-              <CheckoutButton>CHECKOUT</CheckoutButton>
-            </ActionSection>
-
-        </OverlayCartContainer></OverlayContainerWrapper> }
-      
-
-      
+                  {this.state.isCartActive && <OverlayCartWrapperContainer toggleCart={handleCartActive}/> }
       </NavbarItem>
 
     )
@@ -99,8 +52,6 @@ export class OverlayCart extends Component {
 
 const  mapStateToProps = (state) =>{
   return {
-      currencyState:state.currency.currencyState,
-      currencySymbol:state.currency.currencySymbol,
       cart:state.cart.cart.cartItems
   }
 }

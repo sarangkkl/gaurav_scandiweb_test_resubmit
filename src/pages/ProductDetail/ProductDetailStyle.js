@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const ProductDetailContainer = styled.div`
     
     display:flex;
-    margin-top:30px;
+    margin-top:100px;
     justify-content:space-between;
 
 `

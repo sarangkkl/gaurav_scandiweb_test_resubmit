@@ -53,7 +53,9 @@ export const CartCardAction = styled.div`
 `;
 
 export const CartCardImg = styled.div`
-  padding: 0px 10px;
+  
+  display: flex;
+  align-items: center;
   width: 121px;
   & img{
     width:100%;

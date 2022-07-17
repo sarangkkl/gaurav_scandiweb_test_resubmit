@@ -4,7 +4,7 @@ import { ProductImageWrapper,ProductImage,ProductImageContainer,ProductMainImage
 export class ProductImageCrousal extends Component {
     render() {
     const { images,inStock } = this.props;
-    // console.log(this.props)
+    
     // Function that is handling the change of the image
     const handleImageChange = (value) => {
         var x = document.getElementById("main__img");

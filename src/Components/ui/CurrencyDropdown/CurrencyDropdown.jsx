@@ -36,6 +36,7 @@ export class CurrencyDropdown extends Component {
       .then((res) => {
         this.setState({
           currency: res.data.currencies,
+          
         });
         this.props.toggleCurrency("USD+$");
       })
@@ -66,7 +67,7 @@ export class CurrencyDropdown extends Component {
               </CurrencyBtn>
                   {this.state.isActiveCurrency && <SelectWrapperContainer> <SelectWrapper >
                   {this.state.currency ? this.state.currency.map((item,index)=>(
-                        <SelectInput key={index} value={`${item.label}+${item.symbol}`} label={`${item.symbol} ${item.label}`}/>
+                        <SelectInput key={index} value={`${item.label}+${item.symbol}`} label={`${item.symbol} ${item.label}`} hide={handleCurrencyActive}/>
                     )):""}
               </SelectWrapper> </SelectWrapperContainer>}
           </NavbarItem>

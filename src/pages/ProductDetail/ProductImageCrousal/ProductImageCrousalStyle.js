@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 export const ProductImageWrapper = styled.div`
     display: flex;
     flex-direction: column;
@@ -9,8 +8,8 @@ export const ProductImageWrapper = styled.div`
 export const ProductImage = styled.div`
     margin-top: 10px;
     img{
-        width:80px;
-        height:80px;
+        
+        height:100px;
         cursor:pointer;
     }
 `

@@ -10,14 +10,13 @@ import { Routes, Route, Navigate } from "react-router-dom";
 export class App extends Component {
   
   componentDidMount(){
-    
     getCategories().then(data =>{
       this.props.setCategories(data.data.categories)
     })
   }
   render() {
     return (
-      <div>
+      <>
           <Navbar/>
           <Routes>
             <Route path="/" element={<Navigate replace to="/all" />} />
@@ -27,7 +26,7 @@ export class App extends Component {
             <Route path="/cart" element={<CartPage/>} />
             <Route path="/:id" element={<ProductDetail />} />
           </Routes>
-      </div>
+      </>
     )
   }
 }

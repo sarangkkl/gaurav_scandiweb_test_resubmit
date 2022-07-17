@@ -11,7 +11,7 @@ export const ContentWrapper = styled.div`
 export const PageTitle = styled.h1`
   font-size: 42px;
   font-weight: 400;
-  margin: 80px 0px;
+  margin: 100px 0px;
 `;
 
 export const RadioButton = styled.div`
@@ -35,8 +35,8 @@ export const RadioButton = styled.div`
   & input[type="radio"] + label {
     position: absolute;
     width: ${props =>props.size==="sm" ? "114%":"104%"};
-    height: ${props =>props.size==="sm" ? "114%":"104%"};
-    top: -1px;
+    height: ${props =>props.size==="sm" ? "114%":"109%"};
+    top: -2px;
     left: -1px;
     display: flex;
     align-items: center;

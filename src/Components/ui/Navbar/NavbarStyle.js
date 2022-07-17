@@ -4,6 +4,11 @@ import { colors } from "../../../styles/theme";
 export const NavbarWrapper = styled.div`
   width: 100%;
   display: flex;
+  position: fixed;
+  top: 0;
+  background-color: white;
+  z-index: 1;
+
   justify-content: space-between;
 `;
 
@@ -18,8 +23,6 @@ export const NavbarItem = styled.div`
   a {
     color: ${colors.blackColor};
   }
-
-  
 `;
 
 export const NavbarSelect = styled.select`
@@ -39,4 +42,3 @@ export const CurrencyBtn = styled.button`
   outline: none;
   cursor: pointer;
 `;
-
