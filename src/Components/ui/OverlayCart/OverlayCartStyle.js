@@ -5,7 +5,8 @@ export const OverlayContainerWrapper = styled.div`
   position: fixed;
   width: 100%;
   height: 100%;
-  z-index: 99;
+  z-index: 100;
+  top:69px;
   right: 0; 
   background: rgba(57, 55, 72, 0.22);
   
@@ -68,6 +69,8 @@ export const TotalContainer = styled.div`
 `;
 
 export const ActionSection = styled.div`
+ 
+ 
   margin: 10px 5px;
   display: flex;
   justify-content: space-between;

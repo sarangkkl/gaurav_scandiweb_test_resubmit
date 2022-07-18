@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { OverlayCartContainer,OverlayCartHeader,TotalContainer,
   ActionSection,ViewBagButton,CheckoutButton,OverlayContainerWrapper,} from './OverlayCartStyle';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { OverlayCartbody } from '../../';
 
@@ -13,7 +13,8 @@ export class OverlayCartWrapperContainer extends Component {
           actionRef: React.createRef(null),
         }
       }
-
+      
+      
       handleHideDropdown = (event) => {
         if (event.key === 'Escape') {
           this.props.toggleCart(event);
@@ -24,17 +25,21 @@ export class OverlayCartWrapperContainer extends Component {
         if (this.state.ref.current && !this.state.ref.current.contains(event.target)) {
             this.props.toggleCart(event);
         }
+
+        
       }
     
       componentDidMount() {
         document.addEventListener('keydown', this.handleHideDropdown, true);
-        document.addEventListener('click', this.handleClickOutside, true);
+        document.addEventListener('mousedown', this.handleClickOutside, true);
       }
     
       componentWillUnmount(){
         document.removeEventListener('keydown', this.handleHideDropdown, true);
-        document.removeEventListener('click', this.handleClickOutside, true);
+        document.removeEventListener('mousedown', this.handleClickOutside, true);
       }
+
+      
 
   render() {
     
@@ -62,22 +67,20 @@ export class OverlayCartWrapperContainer extends Component {
       }
 
     return (
-        <OverlayContainerWrapper >
-          <OverlayCartContainer ref={this.state.ref}>
-            <OverlayCartHeader>
+        <OverlayContainerWrapper > <OverlayCartContainer ref={this.state.ref}>
+        <OverlayCartHeader>
                 My Bag,   <span>{getTotalItem()} items</span>
-            </OverlayCartHeader>
+        </OverlayCartHeader>
               <OverlayCartbody cartItem ={this.props.cart}/>
             <TotalContainer>
               <p>Total</p>
               <h6>{this.props.currencySymbol} {getTotalPrice(this.props.currencyState)}</h6>
             </TotalContainer>
             <ActionSection >
-                <Link to={"/cart"}><ViewBagButton>VIEW BAG</ViewBagButton></Link>  
-                <CheckoutButton>CHECKOUT</CheckoutButton>
+            <Link to={"/cart"} ><ViewBagButton onClick={(e)=>{this.props.toggleCart(e)}}>VIEW BAG</ViewBagButton></Link>  
+              <CheckoutButton>CHECKOUT</CheckoutButton>
             </ActionSection>
-        </OverlayCartContainer>
-        
+          </OverlayCartContainer>
         </OverlayContainerWrapper>
     )
   }

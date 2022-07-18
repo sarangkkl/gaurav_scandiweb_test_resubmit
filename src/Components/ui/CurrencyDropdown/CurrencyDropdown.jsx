@@ -78,7 +78,6 @@ export class CurrencyDropdown extends Component {
 const  mapStateToProps = (state) =>{
   return {
       currencySymbol:state.currency.currencySymbol,
-      
   }
 }
 export default connect(mapStateToProps,{toggleCurrency}) (CurrencyDropdown);

@@ -9,7 +9,8 @@ import CurrencyDropdown from './ui/CurrencyDropdown/CurrencyDropdown';
 import OverlayCart from "./ui/OverlayCart/OverlayCart";
 import OverlayCartbody from "./ui/OverlayCart/OverlayCartbody/OverlayCartbody";
 import Loader from "./ui/Loader/Loader";
+import ClickOutsideHandler from "./ui/clickOutsideHandler/ClickOutSideHandler";
 export {
     Navbar,ProductCard,ProductImageCrousal,Radiobtn,RadioColorBtn,Button,SelectInput,CurrencyDropdown,OverlayCart,
-    OverlayCartbody,Loader
+    OverlayCartbody,Loader,ClickOutsideHandler
 }

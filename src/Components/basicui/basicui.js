@@ -11,7 +11,7 @@ export const ContentWrapper = styled.div`
 export const PageTitle = styled.h1`
   font-size: 42px;
   font-weight: 400;
-  margin: 100px 0px;
+  margin: 120px 0px;
 `;
 
 export const RadioButton = styled.div`
