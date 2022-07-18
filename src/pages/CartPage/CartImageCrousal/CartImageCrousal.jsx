@@ -89,15 +89,15 @@ export class CartImageCrousal extends Component {
             </ProductImage>
               {/* REnder button only if image more than one */}
             {item.product.gallery.length > 1 && <CrousalButtons>
-              <button onClick={() => toggleImg("DEC")}>˂</button>
-              <button onClick={() => toggleImg("INC")}>˃</button>
+              <button onClick={() => toggleImg("DEC")}><img src="/assets/images/Arrow-Left.png" alt="imh"/></button>
+              <button onClick={() => toggleImg("INC")}><img src="/assets/images/Arrow-Right.png" alt='imh'/></button>
             </CrousalButtons>} 
         </div>
       </ActionContainer>
     )
   }
 }
-
+// src\assets\images\Arrow-Left.png
 const mapStateToProps = (state) => {
   return {
     currencyState: state.currency.currencyState,

@@ -18,6 +18,7 @@ export const NavbarItem = styled.div`
   margin-right: 32px;
   font-weight: 600;
   font-size: 16px;
+  width:50px;
   a {
     color: ${colors.blackColor};
   }

@@ -63,6 +63,10 @@ export const CrousalButtons = styled.div`
     background: rgba(0, 0, 0, 0.73);
     color: #fff;
     margin-right: 10px;
+
+    & img{
+      padding: 4px;
+    }
   }
 `;
 

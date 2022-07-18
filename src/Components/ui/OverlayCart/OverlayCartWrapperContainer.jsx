@@ -17,13 +17,13 @@ export class OverlayCartWrapperContainer extends Component {
       
       handleHideDropdown = (event) => {
         if (event.key === 'Escape') {
-          this.props.toggleCart(event);
+          this.props.toggleCart();
         }
       }
     
       handleClickOutside = (event) => {
         if (this.state.ref.current && !this.state.ref.current.contains(event.target)) {
-            this.props.toggleCart(event);
+            this.props.toggleCart();
         }
 
         
@@ -77,7 +77,7 @@ export class OverlayCartWrapperContainer extends Component {
               <h6>{this.props.currencySymbol} {getTotalPrice(this.props.currencyState)}</h6>
             </TotalContainer>
             <ActionSection >
-            <Link to={"/cart"} ><ViewBagButton onClick={(e)=>{this.props.toggleCart(e)}}>VIEW BAG</ViewBagButton></Link>  
+            <Link to={"/cart"} ><ViewBagButton onClick={(e)=>{this.props.toggleCart()}}>VIEW BAG</ViewBagButton></Link>  
               <CheckoutButton>CHECKOUT</CheckoutButton>
             </ActionSection>
           </OverlayCartContainer>

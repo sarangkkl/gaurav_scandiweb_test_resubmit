@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { CartCount,NavbarItem,NavbarItemIcon,DisableNavbarItemIcon } from './OverlayCartStyle';
 import { connect } from 'react-redux';
-import { ClickOutsideHandler } from '../../'
 import OverlayCartWrapperContainer from './OverlayCartWrapperContainer';
 
 export class OverlayCart extends Component {
@@ -16,12 +15,11 @@ export class OverlayCart extends Component {
 
   render() {
     // Function that will show the cart
-  const handleCartActive = (e)=>{
+  const handleCartActive = ()=>{
     
     this.setState({
       isCartActive:!this.state.isCartActive
     })
-    // console.log('handleCartActive',);
   }
     // Function whose purpose of life to get the totalitems in the cart
     const getTotalItem = () =>{
