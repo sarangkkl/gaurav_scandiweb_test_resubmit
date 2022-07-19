@@ -8,7 +8,7 @@ import ProdData from "./ProdData";
 export class CartPageCard extends Component {
   render() {
     const { item,uniqueKey  } = this.props;
-    // const { product } = item;
+    
     return (
       <>
       <Card>
